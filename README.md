@@ -1,128 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Grocery Ordering System</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    h1, h2 {
-      color: #2c3e50;
-    }
-    code {
-      background: #eee;
-      padding: 2px 4px;
-      border-radius: 4px;
-      font-family: monospace;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .section {
-      margin-bottom: 30px;
-    }
-    .highlight {
-      background: #dff0d8;
-      padding: 10px;
-      border-left: 5px solid #3c763d;
-      margin: 10px 0;
-    }
-  </style>
-</head>
-<body>
+# 🛒 Grocery Ordering System
 
-  <h1>🥦 Grocery Ordering System</h1>
+### ✅ Project Overview
+A beginner-friendly Python project that simulates a real-life grocery store checkout system. It handles inventory, budget management, delivery logic, and cart operations — giving a feel of what a real ordering system might involve.
 
-  <p><strong>Project Title:</strong> Grocery Store Checkout System (Python Beginner Team Challenge)</p>
-  <p><strong>Objective:</strong> To simulate a real-life grocery store checkout experience using Python, focusing on inventory management, cart operations, delivery options, and budget handling — ideal for beginner to intermediate Python learners.</p>
+---
 
-  <div class="section">
-    <h2>✅ Updated Features</h2>
+### 🧠 Key Features
 
-    <h3>📦 Product Inventory Management</h3>
-    <ul>
-      <li>Each grocery item now has a defined stock quantity.</li>
-      <li>Stock is decreased when an item is added to the cart.</li>
-      <li>If out of stock, the system alerts the user.</li>
-    </ul>
+#### 🗃️ Product Inventory Management
+- Each item has a stock quantity.
+- Stock updates automatically when items are added/removed.
+- Out-of-stock items cannot be selected.
 
-    <h3>🛡 Robust Input Handling</h3>
-    <ul>
-      <li>Invalid product entries are caught using <code>try-except</code>.</li>
-      <li>Friendly error message: “⚠ We do not sell that here. Please choose a product from the menu.”</li>
-      <li>Prevents crashes from unexpected input.</li>
-    </ul>
+#### 🔒 Input Handling
+- Prevents app crashes with `try-except` blocks.
+- Gives friendly messages for invalid input like:  
+  _"⚠ We do not sell that here. Please choose a product from the menu."_
 
-    <h3>🛒 Dynamic Cart Operations</h3>
-    <ul>
-      <li>Users can view and remove items from their cart.</li>
-      <li>Inventory adjusts when items are removed (stock increases).</li>
-    </ul>
+#### 🛍️ Dynamic Cart Operations
+- View and edit cart anytime.
+- Remove items to adjust total.
+- Stock updates dynamically with cart changes.
 
-    <h3>💰 Budget Handling</h3>
-    <ul>
-      <li>Total cart value is compared to the user’s budget at checkout.</li>
-      <li>Options for insufficient funds:
-        <ul>
-          <li>Add more money</li>
-          <li>Remove items</li>
-          <li>Cancel purchase</li>
-        </ul>
-      </li>
-    </ul>
+#### 💸 Budget Handling
+- Not enough money? Choose to:
+  - Add more funds
+  - Remove items
+  - Cancel purchase
 
-    <h3>🚚 Delivery Logic</h3>
-    <ul>
-      <li>Users choose whether to have their items delivered.</li>
-      <li>Orders above R1000 get free delivery.</li>
-      <li>Otherwise, R2 per 500g of food.</li>
-      <li>Charges are proportional (e.g. 2kg = R8 delivery fee).</li>
-    </ul>
+#### 🚚 Delivery Logic
+- Free delivery for orders **R1000+**.
+- Below R1000? Delivery charged by weight at **R2 per 500g**.
+- Proportional calculation (e.g., 2kg = R8).
 
-    <h3>🧾 Clear Summary and Messages</h3>
-    <ul>
-      <li>Readable cart summary, total cost, and payment feedback.</li>
-      <li>Successful payment: thank-you and change displayed.</li>
-      <li>Failed payment: friendly exit message.</li>
-    </ul>
+#### 💬 Clear Summaries & Feedback
+- Readable cart, total, and payment info.
+- Confirmation messages for successful and failed transactions.
 
-    <h3>🔧 Modular and Maintainable</h3>
-    <ul>
-      <li>Logic split into reusable functions: <code>add_to_cart</code>, <code>remove_from_cart</code>, <code>handle_payment</code>, <code>show_cart</code>.</li>
-      <li>Clean and scalable — ready for future integration.</li>
-    </ul>
+---
 
-    <h3>🖥 Tkinter GUI Ready</h3>
-    <p>The console version is structured for easy migration to a GUI:</p>
-    <ul>
-      <li>Listboxes for item selection</li>
-      <li>Buttons for add/remove</li>
-      <li>Entry fields for user payments</li>
-      <li>Checkboxes/radio buttons for delivery options</li>
-      <li>Dynamic label updates for cart and cost</li>
-    </ul>
-  </div>
+### 🧩 Code Structure
 
-  <div class="section highlight">
-    <strong>📌 Summary:</strong> This project mimics a real shopping experience with stock tracking, cart management, delivery fees, and budgeting. It uses Python fundamentals like functions, conditionals, loops, lists, and dictionaries. The system is now modular and ready for a Tkinter GUI upgrade.
-  </div>
+Modular design with clearly defined functions:
+- `add_to_cart()`
+- `remove_from_cart()`
+- `handle_payment()`
+- `show_cart()`
 
-  <div class="section">
-    <h2>🚀 Next Steps for Team</h2>
-    <ul>
-      <li>Test logic in the console version</li>
-      <li>Assign GUI elements to teammates</li>
-      <li>Start designing GUI layout</li>
-    </ul>
-    <p><strong>Let’s build it!</strong></p>
-  </div>
+Easily extendable into a GUI using **Tkinter** in future versions.
 
-</body>
-</html>
+---
+
+### 🚀 Future Plans
+- Migrate logic into a Tkinter GUI.
+- Features to include:
+  - Item selection via Listbox
+  - Buttons to modify cart
+  - Labels for totals
+  - Entry fields for payment
+  - Delivery options via checkboxes or radio buttons
+
+---
+
+### 📌 Summary
+
+This Grocery Ordering System helped me reinforce:
+- Functions
+- Loops and conditionals
+- Lists and dictionaries
+- Handling user input
+- Real-world logic like stock, payments, and delivery
+
+It was also a lesson in simplicity — learning to break down problems into small, manageable steps and stop overthinking.
+
+---
+
+### 🔗 Project Repository
+Explore the full code here:  
+📍 [Grocery Ordering System on GitHub](https://github.com/bongumusa-web/Grocery-Ordering-System/blob/main/Main_grocery_ordering_system.py)
+
+---
+
+### 🔖 Hashtags (for ALX task submission)
+`#ALX_SE` `#ALX_PDBE` `#ALX_PDFE` `#ALX_FE` `#ALX_BE`  
+Mention: [@alx_africa](https://twitter.com/alx_africa)
+
+---
+
+### 🧠 Lesson Learned
+Overthinking led to big, unnecessary code. But by following instructions, breaking things down, and using ChatGPT + YouTube for help — I’ve learned to **code smarter, not harder**.
+
+Let's keep building! 💪
